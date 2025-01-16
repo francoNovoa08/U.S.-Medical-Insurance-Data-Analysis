@@ -13,7 +13,7 @@ The Insurance Data Analysis Tool is a Python program designed to analyse health 
 - **Region Analysis**: Counts and calculates the percentage of individuals from different regions.
 
 ## Requirements
-- Python 3.7 or later
+- Python 3
 - A CSV file named `insurance.csv` with the following structure:
 age, sex, bmi, children, smoker, region, charges
 ### Example CSV:
