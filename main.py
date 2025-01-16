@@ -29,6 +29,14 @@ class InsuranceData:
         else:
             # Odd list
             return ordered_list[mid]
+        
+    
+    def _calc_std_deviation(self, list, list_mean):
+        difference_mean_values = 0
+        for item in list:
+            difference_mean_values += (item - list_mean) ** 2
+        
+        return (difference_mean_values / len(list)) ** 0.5
 
     
     def analyse_age(self):
@@ -37,11 +45,15 @@ class InsuranceData:
             return
         
         # Mean analysis
-        print(f"Age mean: {sum(self.age) / len(self.age):.2f}")
+        age_mean = sum(self.age) / len(self.age)
+        print(f"Age mean: {age_mean}")
 
         # Median analysis
         ages_sorted = sorted(self.age)
         print(f"Age median: {self._calc_median(ages_sorted):.2f}")
+
+        #Standard deviation analysis
+        print(f"Age standard deviation: {self._calc_std_deviation(self.age, age_mean):.2f}")
 
 
 
